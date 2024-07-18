@@ -1,0 +1,19 @@
+NORMALISASI 2 => PENGELOMPOKKAN
+KODE
+kode obat (nama obat, dosis, resep, klasifikasi obat, jenis obat, )
+
+kode pasien (nama pasien, tgl rujuk, alamat, jenis kelamin, umur, berat badan, no hp, Riwayat penyakit, antrian, gejala, diagnose, jenis perawatan, jenis penanganan, jenis asuransi, jadwal control, )
+
+kode dokter (nama dokter, alamat, jenis kelamin, umur, berat badan, no hp, poly, jenis perawatan, jenis penanganan, jenis asuransi, jadwal control)
+
+kode petugas (nama petugas, berat badan, umur, jenis kelamin, alamat)
+
+kode poly (nama poly, petugas, nama dokter, nama pasien)
+
+kode kamar (nama kamar)
+
+kode transaksi (tgl rujuk, tgl berobat, Harga, kode pasien, kode dokter)
+
+kode jual ()
+
+kode inap ()

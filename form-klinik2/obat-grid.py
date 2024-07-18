@@ -2,10 +2,6 @@ from tkinter import *
 root = Tk()
 
 root.title("Form Obat")
-# main_frame = Frame(root)
-# main_frame.pack(padx=10, pady=10)
-
-# Label(root, text="No", relief="solid", borderwidth=1).grid(row=0, column=0)
 
 frame_no_tgl_exp = Frame(root, relief="solid", borderwidth=1)
 frame_no_tgl_exp.grid(row=0, column=0, sticky='nsew', rowspan=2)
