@@ -1,25 +1,34 @@
 from tkinter import *
 import mysql.connector
-db = mysql.connector.connect(
-host="localhost",
-user="root",
-password="",
-database="klinik"
-)
-cursor = db.cursor()
-def insert():
-       insert_query ="INSERT INTO petugas (id_petugas,nama,jenis_kelamin,umur,berat_badan,tinggi_badan,petugas) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-       data = (id_petugas.get(),nama.get(),jenis_kelamin.get(),umur.get(),berat_badan.get(),tinggi_badan.get(),petugas.get())
-       cursor.execute(insert_query, data)
-       db.commit()
+from tkinter import messagebox
 
 root = Tk()
 root.title("FORM PETUGAS")
 
-label1 = Label(root, text="ID Petugas:")
-label1.grid(column=0, row=0, padx=5, pady=5)
-id_petugas = Entry(root, width=30)
-id_petugas.grid(column=1, row=0, padx=5, pady=5)
+db = mysql.connector.connect(
+       host="localhost",
+       user="root",
+       password="",
+       database="klinik"
+)
+
+cursor = db.cursor()
+
+def insert():
+       insert_query ="INSERT INTO petugas (nama,jenis_kelamin,umur,berat_badan,tinggi_badan,petugas) VALUES (%s, %s, %s, %s, %s, %s)"
+       data = (nama.get(),jenis_kelamin.get(),umur.get(),berat_badan.get(),tinggi_badan.get(),petugas.get())
+       cursor.execute(insert_query, data)
+       db.commit()
+
+       messagebox.showinfo("Success", "Data updated successfully")
+       root.destroy()
+
+
+
+# label1 = Label(root, text="ID Petugas:")
+# label1.grid(column=0, row=0, padx=5, pady=5)
+# id_petugas = Entry(root, width=30)
+# id_petugas.grid(column=1, row=0, padx=5, pady=5)
 
 label2 = Label(root, text="Nama Petugas:")
 label2.grid(column=0, row=1, padx=5, pady=5)

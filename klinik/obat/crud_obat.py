@@ -39,10 +39,10 @@ def update(id, nama, klasifikasi, jenis, harga, dosis, resep):
         cursor.execute(sql, val)
         db.commit()
         
-        edit_window.destroy()
+        # edit_window.destroy()
         messagebox.showinfo("Success", "Data updated successfully")
         root.destroy()
-        main()
+        # main()
 
     edit_window = Toplevel(root)
     edit_window.title("Edit Data")
@@ -88,7 +88,7 @@ def delete(id):
     db.commit()
     messagebox.showinfo("Success", "Data deleted successfully")
     root.destroy()
-    main()
+    # main()
 
 # Main window
 def main():
@@ -116,8 +116,8 @@ def main():
         Label(root, text=data[4], borderwidth=1, relief=SUNKEN, width=10).grid(row=no, column=5)
         Label(root, text=data[5], borderwidth=1, relief=SUNKEN, width=10).grid(row=no, column=6)
         Label(root, text=data[6], borderwidth=1, relief=SUNKEN, width=10).grid(row=no, column=7)
-        Button(root, text="Delete", command=lambda id=data[0] :delete(id)).grid(row=no, column=8)
-        Button(root, text="Edit", command=update ).grid(row=no, column=9)
+        Button(root, text="Edit",  command=lambda id=data[0], nama=data[1], klasifikasi=data[2], jenis=data[3], harga=data[4], dosis=data[5], resep=data[6] :update(id, nama, klasifikasi, jenis, harga, dosis, resep)).grid(row=no, column=8)
+        Button(root, text="Delete", command=lambda id=data[0] :delete(id)).grid(row=no, column=9)
 
     root.mainloop()
 
